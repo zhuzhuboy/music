@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    #wrapper {
+        width: 100vw;
+        height: 100vh;
+        padding-top: 20vw;
+        box-sizing: border-box;
+
+        .img-box {
+            width: 60vw;
+            height: 60vw;
+            margin: 0 auto;
+            background-color: black;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 90%;
+                height: 90%;
+                border-radius: 50%;
+            }
+        }
+
+        .song-info {
+            margin-top: 20vw;
+            text-align: center;
+            color: #fff;
+
+            h2 {
+                margin-bottom: 4vw;
+                font-size: 24px;
+                font-weight: normal;
+            }
+
+            div:nth-of-type(1) {
+                margin-bottom: 1vw;
+            }
+        }
+
+        .progress {
+            color: white;
+            margin-top: 40vw;
+            height: 6vw;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            .cur-time,
+            .total-time {
+                width: 20vw;
+
+            }
+
+            .drag {
+                flex: 1;
+                height: 6vw;
+               
+                position: relative;
+
+                box-sizing: border-box;
+
+                .spot {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%) translateX(-50%);
+                    left: 0;
+                    width: 4vw;
+                    height: 4vw;
+                    border-radius: 50%;
+                    border: 4vw solid rgba(248, 4, 4, 0);
+                    background-clip: padding-box;
+                    background-color: #00f3f3;
+                    z-index: 3;
+                }
+
+                .font-bg,
+                .back-bg {
+                    
+                    width: 0%;
+                    height: 1vw;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    background-color: #fff;
+                    z-index: 2;
+                }
+
+                .back-bg {
+                    width: 100%;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    z-index: 1;
+                }
+            }
+        }
+
+        .control {
+            position: fixed;
+            bottom: 0;
+            height: 18vw;
+            width: 100vw;
+            display: flex;
+
+            li {
+                flex: 1 1 auto;
+
+            }
+
+            li:nth-of-type(1) {
+                background-image: url(../image/icon-like.png);
+                background-position: center;
+                background-size: 50%;
+                background-repeat: no-repeat;
+
+                &.liked {
+                    background-image: url(../image/icon-like-solid.png);
+                }
+            }
+
+            li:nth-of-type(2) {
+                background-image: url(../image/icon-prev.png);
+                background-position: center;
+                background-size: 50%;
+                background-repeat: no-repeat;
+            }
+
+            li:nth-of-type(3) {
+                background-image: url(../image/icon-play.png);
+                background-position: center;
+                background-size: 50%;
+                background-repeat: no-repeat;
+
+                &.pause {
+                    background-image: url(../image/icon-pause.png);
+                }
+            }
+
+            li:nth-of-type(4) {
+                background-image: url(../image/icon-next.png);
+                background-position: center;
+                background-size: 50%;
+                background-repeat: no-repeat;
+            }
+
+            li:nth-of-type(5) {
+                background-image: url(../image/icon-list.png);
+                background-position: center;
+                background-size: 50%;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .play-list {
+
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            color: #fff;
+            background: linear-gradient(180deg, black, gray);
+
+            z-index: 5;
+
+            dd:not(.close) {
+                height: 10vw;
+                line-height: 10vw;
+                margin-left: 5vw;
+
+                &.active {
+                    color: green;
+                }
+            }
+
+            dt,
+            .close {
+                height: 14vw;
+                line-height: 14vw;
+                text-align: center;
+                font-size: 16px;
+            }
+
+        }
+    }
+
+}
